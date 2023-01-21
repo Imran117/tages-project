@@ -1,0 +1,47 @@
+.header {
+    &__navbar {
+        margin: 32px 0;
+        @include media($sm) {
+            margin: 20px 0;
+        }
+
+        &-label {
+            @include flex(flex-start);
+            flex-wrap: wrap;
+
+            @include media($sm) {
+                row-gap: 10px
+            }
+        }
+
+        &-link {
+            @include flex(flex-start);
+            font-family: $sfui-font;
+            font-weight: 400;
+            color: #828282;
+            &.active {
+                color: $dark;
+            }
+
+            & span {
+                margin: 0 10px;
+            }
+        }
+
+        &-title {
+            font-family: $sfpro-font;
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 48px;
+            margin-top: 32px;
+            @include media($sm) {
+                font-size: 28px;
+                margin-top: 15px;
+                line-height: 28px;
+            }
+            @include media(460px) {
+                font-size: 25px;
+            }
+        }
+    }
+}

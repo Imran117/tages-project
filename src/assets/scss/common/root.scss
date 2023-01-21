@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul,
+ol, 
+li {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+// connected all fonts
+
+$fonts: ('Aeroport','Medium',500),
+    ('SF-Pro-Display', 'Medium', 500),
+    ('SF-Pro-Display', 'Regular', 400),
+    ('SF-Pro-Display', 'Semibold', 600),
+    ('SFUIText', 'Regular', 400),
+    ('SFUIText', 'Medium', 500),
+    ('SourceSansPro', 'Regular', 400);
+
+@each $name, $weightName, $weight in $fonts {
+    @font-face {
+        font-family: $name;
+        src: url('@/assets/fonts/#{$name}-#{$weightName}.ttf');
+        font-weight: $weight;
+    }
+}
+
+// media-sizes
+$sm: 576px;
+$md: 765px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+// fonts
+$sfpro-font: 'SF-Pro-Display';
+$sfui-font: 'SFUIText';
+$aer-font: 'Aeroport';
+$sspro-font: 'SourceSansPro';
+// colors
+$white: #FFFFFF;
+$dark: black;
+$gray: #828282;
+$light-gray: #888888;
+
+@mixin media($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+
+@mixin flex($jc:center, $ai:center) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+.container {
+    max-width: 1520px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+body {
+    background: #FFFFFF;
+}
